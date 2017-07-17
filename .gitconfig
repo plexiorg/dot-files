@@ -1,0 +1,45 @@
+[user]
+    email = plexipi123@github
+    name = plexipi123
+[push]
+    default = simple
+[status]
+    showUntrackedFiles = all
+[color]
+    ui = True
+[merge]
+    conflictstyle = diff3
+    tool = vimdiff
+    prompt = false
+[alias]
+    co = checkout
+    ammend = commit --amend
+    aa = commit -a --amend
+    # all useful commit combinations in short
+    ci = commit -s
+    cia = commit -as
+    cim = commit -sm
+    ciam = commit -asm
+
+    # log like gitk
+    lol = log --oneline --graph --decorate
+    lola = log --oneline --graph --decorate --all
+    lols = log --oneline --graph --decorate --all --max-count=10
+    lolf = log --oneline --graph --decorate dev..
+    # only show me what is not pushed yet
+    top = log --oneline --graph --decorate @{u}..
+    topold = "!git log --oneline --graph --decorate `git rev-parse --abbrev-ref HEAD` ^origin/`git rev-parse --abbrev-ref HEAD`"
+    # only show me what is not merged from remote yet
+    new = log --oneline --graph --decorate ..@{u}
+    newold = "!git log --oneline --graph --decorate ^`git rev-parse --abbrev-ref HEAD` origin/`git rev-parse --abbrev-ref HEAD`"
+
+    #these are not really used yet
+    st = status
+    stage = add
+    unstage = reset HEAD
+[mergetool]
+    keepBackup = false
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
